@@ -4,7 +4,7 @@ A comprehensive data analysis and machine learning project for predicting NFL ga
 
 ## Video Demonstration
 
-**Watch the project walkthrough:** [NFL Prediction Analysis - Code Walkthrough](YOUR_YOUTUBE_LINK_HERE)
+**Watch the project walkthrough:** [NFL Prediction Analysis - Code Walkthrough](https://www.loom.com/share/116dc9a0a8714f498500d5e21e687c3d?sid=790066d2-b1dd-435b-816b-70e92c2e9c30)
 
 This 4-5 minute video demonstrates:
 - Software execution and analysis pipeline

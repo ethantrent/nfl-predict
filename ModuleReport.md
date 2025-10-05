@@ -2,7 +2,7 @@
 
 |Name|Date|Teacher|
 |-|-|-|
-|Ethan|October 3, 2025|Bro McGary|
+|Ethan|October 4, 2025|Bro McGary|
 
 ### Project Repository Link
 [NFL 2025 Season Prediction Model - GitHub Repository](https://github.com/ethantrent/nfl-predict)
@@ -34,8 +34,8 @@ Complete the following checklist to make sure you completed all parts of the mod
 |Did you write at least 100 lines of code in your software and include useful comments?                              |**Yes**|Wrote 1,000+ lines across 4 core modules.|
 |Did you use the correct README.md template from the Module Description document in I-Learn?                         |**Yes**|Created comprehensive README.md with project overview, setup instructions, usage examples, and documentation.|
 |Did you completely populate the README.md template?                                                                 |**Yes**|Included all sections: overview, setup, structure, usage, data sources, key findings, timeline, license, and acknowledgments.|
-|Did you create the video, publish it on YouTube, and reference it in the README.md file?                            |**Ready**|Video script prepared, all materials ready. TODO: Update to 'Yes' after publishing video.|
-|Did you publish the code with the README.md (in the top-level folder) into a public GitHub repository?              |**Ready**|Code ready for publication. TODO: Update to 'Yes' after pushing to GitHub.|
+|Did you create the video, publish it on YouTube, and reference it in the README.md file?                            |**Yes**|Video recorded, published to YouTube, and linked in README.md.|
+|Did you publish the code with the README.md (in the top-level folder) into a public GitHub repository?              |**Yes**|Repository published at https://github.com/ethantrent/nfl-predict|
  
 
 ### Did you complete a Stretch Challenge 
@@ -108,15 +108,15 @@ How many hours did you spend on this module and the team project this Sprint?
 
 Before converting to PDF and submitting, complete these items:
 
-- [ ] **Record Video** - Use VIDEO_SCRIPT.md as guide (4-5 minutes)
-- [ ] **Upload to YouTube** - Set as Public or Unlisted
-- [ ] **Update README.md** - Replace `YOUR_YOUTUBE_LINK_HERE` with actual YouTube URL (line 7)
-- [ ] **Push to GitHub** - Create public repository and push all code
-- [ ] **Update Line 8 Above** - Replace `yourusername` with your actual GitHub username
-- [ ] **Update Line 38 Above** - Change "Ready" to "Yes" after video is published
-- [ ] **Update Line 39 Above** - Change "Ready" to "Yes" after pushing to GitHub
-- [ ] **Convert to PDF** - Use VS Code Markdown PDF extension or similar
-- [ ] **Submit PDF** - Upload to I-Learn
+- [x] **Record Video** - Use VIDEO_SCRIPT.md as guide (4-5 minutes)
+- [x] **Upload to YouTube** - Set as Public or Unlisted
+- [x] **Update README.md** - Replace `YOUR_YOUTUBE_LINK_HERE` with actual YouTube URL (line 7)
+- [x] **Push to GitHub** - Create public repository and push all code
+- [x] **Update Line 8 Above** - Replace `yourusername` with your actual GitHub username
+- [x] **Update Line 37 Above** - Change "Ready" to "Yes" after video is published
+- [x] **Update Line 38 Above** - Change "Ready" to "Yes" after pushing to GitHub
+- [x] **Convert to PDF** - Use VS Code Markdown PDF extension or similar
+- [x] **Submit PDF** - Upload to I-Learn
 
 ---
 
