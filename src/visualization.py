@@ -68,8 +68,9 @@ def plot_cover_rates(cover_analysis: pd.DataFrame,
     if save_path:
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
         logger.info(f"Saved cover rate plot to {save_path}")
-    
-    plt.show()
+        plt.close()
+    else:
+        plt.show()
 
 
 def plot_stat_correlations(correlation_df: pd.DataFrame,
@@ -106,8 +107,9 @@ def plot_stat_correlations(correlation_df: pd.DataFrame,
     if save_path:
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
         logger.info(f"Saved correlation plot to {save_path}")
-    
-    plt.show()
+        plt.close()
+    else:
+        plt.show()
 
 
 def plot_thursday_vs_sunday(thursday_stats: Dict,
@@ -171,8 +173,9 @@ def plot_thursday_vs_sunday(thursday_stats: Dict,
     if save_path:
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
         logger.info(f"Saved Thursday vs Sunday plot to {save_path}")
-    
-    plt.show()
+        plt.close()
+    else:
+        plt.show()
 
 
 def plot_correlation_heatmap(team_stats: pd.DataFrame,
@@ -206,8 +209,9 @@ def plot_correlation_heatmap(team_stats: pd.DataFrame,
     if save_path:
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
         logger.info(f"Saved correlation heatmap to {save_path}")
-    
-    plt.show()
+        plt.close()
+    else:
+        plt.show()
 
 
 def create_comprehensive_dashboard(cover_analysis: pd.DataFrame,
@@ -283,6 +287,7 @@ def create_comprehensive_dashboard(cover_analysis: pd.DataFrame,
     if save_path:
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
         logger.info(f"Saved comprehensive dashboard to {save_path}")
-    
-    plt.show()
+        plt.close()
+    else:
+        plt.show()
 

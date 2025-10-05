@@ -28,6 +28,9 @@ def load_schedules(season: int = 2025) -> pd.DataFrame:
     try:
         logger.info(f"Loading schedules for {season} season...")
         schedules = nfl.load_schedules([season])
+        # Convert from Polars to Pandas if needed
+        if hasattr(schedules, 'to_pandas'):
+            schedules = schedules.to_pandas()
         logger.info(f"Successfully loaded {len(schedules)} games")
         return schedules
     except Exception as e:
@@ -38,6 +41,7 @@ def load_schedules(season: int = 2025) -> pd.DataFrame:
 def load_betting_lines(season: int = 2025) -> pd.DataFrame:
     """
     Load betting lines data including spreads and totals.
+    Note: Betting data is included in schedules, so this returns schedules.
     
     Args:
         season: NFL season year (default: 2025)
@@ -46,10 +50,14 @@ def load_betting_lines(season: int = 2025) -> pd.DataFrame:
         DataFrame containing betting lines with spread_line, total_line, etc.
     """
     try:
-        logger.info(f"Loading betting lines for {season} season...")
-        betting_lines = nfl.load_betting_lines([season])
-        logger.info(f"Successfully loaded betting data for {len(betting_lines)} games")
-        return betting_lines
+        logger.info(f"Loading betting data for {season} season...")
+        # Betting data is included in schedules
+        betting_data = nfl.load_schedules([season])
+        # Convert from Polars to Pandas if needed
+        if hasattr(betting_data, 'to_pandas'):
+            betting_data = betting_data.to_pandas()
+        logger.info(f"Successfully loaded betting data for {len(betting_data)} games")
+        return betting_data
     except Exception as e:
         logger.error(f"Error loading betting lines: {e}")
         raise
@@ -68,6 +76,9 @@ def load_play_by_play(season: int = 2025) -> pd.DataFrame:
     try:
         logger.info(f"Loading play-by-play data for {season} season...")
         pbp_data = nfl.load_pbp([season])
+        # Convert from Polars to Pandas if needed
+        if hasattr(pbp_data, 'to_pandas'):
+            pbp_data = pbp_data.to_pandas()
         logger.info(f"Successfully loaded {len(pbp_data)} plays")
         return pbp_data
     except Exception as e:
@@ -96,27 +107,23 @@ def merge_game_data(schedules: pd.DataFrame,
                    betting_lines: pd.DataFrame) -> pd.DataFrame:
     """
     Merge schedules with betting lines for comprehensive game data.
+    Note: Since betting data is in schedules, this just returns schedules.
     
     Args:
-        schedules: Game schedules DataFrame
-        betting_lines: Betting lines DataFrame
+        schedules: Game schedules DataFrame (includes betting data)
+        betting_lines: Betting lines DataFrame (same as schedules)
         
     Returns:
-        Merged DataFrame with game and betting information
+        DataFrame with game and betting information
     """
     try:
-        logger.info("Merging schedules with betting lines...")
-        merged = pd.merge(
-            schedules,
-            betting_lines,
-            on='game_id',
-            how='left',
-            suffixes=('', '_betting')
-        )
-        logger.info(f"Successfully merged data: {len(merged)} games")
+        logger.info("Preparing game data with betting information...")
+        # Betting data already in schedules, just return it
+        merged = schedules.copy()
+        logger.info(f"Successfully prepared data: {len(merged)} games")
         return merged
     except Exception as e:
-        logger.error(f"Error merging data: {e}")
+        logger.error(f"Error preparing data: {e}")
         raise
 
 
