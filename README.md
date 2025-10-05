@@ -2,6 +2,17 @@
 
 A comprehensive data analysis and machine learning project for predicting NFL game outcomes and analyzing team performance during the 2025 season.
 
+## Video Demonstration
+
+**Watch the project walkthrough:** [NFL Prediction Analysis - Code Walkthrough](YOUR_YOUTUBE_LINK_HERE)
+
+This 4-5 minute video demonstrates:
+- Software execution and analysis pipeline
+- Code structure and implementation details
+- Dataset exploration and analysis methods
+- Results and visualizations
+- Key findings and insights
+
 ## Project Overview
 
 This project uses publicly available NFL data from nflverse to answer key questions about team performance, betting spread coverage, and offensive efficiency correlations with wins.
@@ -136,15 +147,76 @@ Navigate to the `notebooks/` directory and open the analysis notebooks in order.
 
 ## Data Sources
 
-All data is sourced from [nflverse](https://github.com/nflverse) via the `nflreadpy` Python package:
-- Game schedules
-- Betting lines and spreads
-- Play-by-play data
-- Team statistics
+### Dataset Description
+This project uses the **NFL 2024 Season Dataset** from [nflverse](https://github.com/nflverse), accessed via the `nflreadpy` Python package. The dataset is free, publicly available, and includes comprehensive NFL game data.
+
+**Dataset Components:**
+- **Game Schedules** (nfl.import_schedules): 285 games with dates, scores, and results
+- **Betting Lines** (nfl.import_betting_lines): Point spreads and over/under lines for all games
+- **Play-by-Play Data** (nfl.import_pbp_data): Over 48,000 plays with EPA (Expected Points Added), success rates, and detailed play information
+- **Time Period:** 2024 NFL Regular Season (Weeks 1-18)
+
+### Data Analysis Methods
+
+The project demonstrates multiple data analysis techniques:
+
+1. **Filtering**
+   - Completed games only (excluding future games)
+   - Offensive plays (pass/run plays only)
+   - Home games by team for spread analysis
+
+2. **Sorting**
+   - Teams ranked by cover rates
+   - Correlations sorted by predictive strength
+   - Feature importance ranked by model weights
+
+3. **Aggregation**
+   - Average EPA (Expected Points Added) per play
+   - Team-level statistics from play-by-play data
+   - Cover rates calculated by team and favorite/underdog status
+   - Count of games by day of week (Thursday vs Sunday)
+
+4. **Data Conversion**
+   - Binary win/loss outcomes from game scores
+   - Spread coverage calculations (margin + spread > 0)
+   - Date parsing for day-of-week analysis
+   - Feature scaling for machine learning models
 
 ## Key Findings
 
-*(To be populated as analysis progresses)*
+### Question 1: Which teams cover the spread most frequently?
+**Analysis:** Examined 285 home games from 2024 season, separating home favorites from home underdogs.
+
+**Top 5 Teams by Cover Rate (Home Games):**
+1. Kansas City Chiefs (KC): 100% (8/8 games)
+2. Philadelphia Eagles (PHI): 100% (9/9 games)
+3. Buffalo Bills (BUF): 100% (8/8 games)
+4. Detroit Lions (DET): 88.9% (8/9 games)
+5. Minnesota Vikings (MIN): 88.9% (8/9 games)
+
+**Insight:** Elite teams with strong home-field advantage consistently beat expectations, making them reliable bets when playing at home.
+
+### Question 2: Which offensive statistics best predict wins?
+**Analysis:** Calculated correlation coefficients between 9 offensive metrics and game outcomes across 500+ team-game performances.
+
+**Top Predictive Metrics:**
+1. Total EPA: 0.512 correlation
+2. Average EPA per play: 0.511 correlation
+3. Passing EPA: 0.507 correlation
+4. Average Pass Yards: 0.444 correlation
+5. Average Yards per Play: 0.399 correlation
+
+**Insight:** Expected Points Added (EPA) is the strongest predictor of wins. Teams that gain more expected points per play, especially through passing, win more games. Traditional yardage metrics are less predictive than efficiency metrics.
+
+### Stretch Challenge: Thursday vs Sunday Scoring
+**Analysis:** Compared total points scored in Thursday Night Football vs Sunday games.
+
+**Results:**
+- Thursday games: 44.68 points/game (19 games)
+- Sunday games: 45.90 points/game (229 games)
+- Difference: -1.21 points
+
+**Insight:** Thursday games average slightly lower scoring, possibly due to shorter rest periods, but the difference is minimal (2.7% lower).
 
 ## Development Timeline
 
