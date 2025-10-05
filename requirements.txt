@@ -20,3 +20,6 @@ ipykernel>=6.0.0
 # Utilities
 python-dotenv>=1.0.0
 
+# Data conversion (required for nflreadpy Polars->Pandas)
+pyarrow>=21.0.0
+
