@@ -1,0 +1,32 @@
+================================================================================
+NFL 2025 SEASON ANALYSIS REPORT
+================================================================================
+
+1. SPREAD COVERAGE ANALYSIS
+--------------------------------------------------------------------------------
+
+Top 5 Teams by Overall Cover Rate (Home Games):
+  KC: 100.0% (8 games)
+  PHI: 100.0% (9 games)
+  BUF: 100.0% (8 games)
+  DET: 88.9% (9 games)
+  MIN: 88.9% (9 games)
+
+2. OFFENSIVE STATS CORRELATION WITH WINS
+--------------------------------------------------------------------------------
+
+Top Predictive Metrics:
+  total_epa: 0.512
+  avg_epa: 0.511
+  pass_epa: 0.507
+  avg_pass_yards: 0.444
+  avg_yards: 0.399
+
+3. THURSDAY VS SUNDAY SCORING
+--------------------------------------------------------------------------------
+
+Thursday Games: 44.68 points/game (n=19)
+Sunday Games: 45.90 points/game (n=229)
+Difference: -1.21 points
+
+================================================================================
